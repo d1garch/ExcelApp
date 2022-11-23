@@ -12,8 +12,18 @@ public class Converter {
         }
 
         for(int item : columnIndexes) {
-
-            if (item <= 0) {
+            result = result + columnToStringConvertImpl(item);
+        }
+        return result;
+    }
+    
+    public static String columnToStringConvert(int columnIndex) {
+        return columnToStringConvertImpl(columnIndex);
+    }
+    
+    private static String columnToStringConvertImpl(int columnIndex) {
+        String result = "";        
+        if (item <= 0) {
                 result = result + "Индекс меньше или равен нулю. Конвертация не возможна.\n";
                 continue;
             }
@@ -32,9 +42,8 @@ public class Converter {
 
             result = result + item + ":" + column + "\n";
         }
-
         return result;
     }
-
-
+    
+    
 }
